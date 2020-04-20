@@ -107,19 +107,25 @@ section.game {
 
 .selection {
   margin: 5px;
+  outline: none;
+  border: 2px solid #333;
 }
-.selection i.hover {
-  color: var(--primary-color);
-}
+
 .selection i {
   text-align: center;
   font-size: var(--icon-size);
-  color: var(--secondary-font-color);
+}
+button.selection i {
+  transition: 0.12s;
+}
+button.selection i:hover {
+  color: var(--primary-color);
 }
 .user-selection p {
   text-align: center;
   color: var(--secondary-font-color);
 }
+
 button.selection {
   width: var(--selection-dimensions);
   height: var(--selection-dimensions);
@@ -127,6 +133,7 @@ button.selection {
   cursor: pointer;
   border-width: 4px;
   border-radius: 25%;
+  transition: 0.07s;
 }
 .computer-selection {
   width: var(--selection-dimensions);
@@ -141,7 +148,17 @@ button.selection {
   align-items: center;
   background-color: #eee;
 }
-
+button.selection:active:focus {
+  transform: scale(1.1);
+  background-color: black;
+  color: var(--primary-color);
+}
+button.selection:focus {
+  box-shadow: 0px 0px 10px black;
+}
+.selection i.icon-highlight {
+  color: var(--primary-color);
+}
 svg {
   height: 75%;
 }

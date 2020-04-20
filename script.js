@@ -16,20 +16,11 @@ let roundNumber = 0;
 
 computerMove.className = brainClassList;
 computer.appendChild(computerMove);
-/*computer.style.backgroundImage = 'url(./ai.svg)';
-computer.style.backgroundColor = '#eee';*/
-function toggleHover(buttonTriggered) {
-  if (buttonTriggered.currentTarget.firstElementChild) {
-    buttonTriggered.currentTarget.firstElementChild.classList.toggle('hover');
-  }
-}
+
 buttons.forEach(button => {
   console.log(button);
-  button.addEventListener('click', playRound)
-  button.addEventListener('mouseover', toggleHover);
-  button.addEventListener('mouseout', toggleHover);
+  button.addEventListener('click', playRound);
 });
-
 
 reset.addEventListener('click', () => {
   playerScore = 0;

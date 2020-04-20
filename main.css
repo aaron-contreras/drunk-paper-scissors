@@ -9,6 +9,7 @@ html {
   --arrow-tip-sides: calc(var(--arrow-tip-width) * 0.75);
   --primary-font-color: white;
   --secondary-font-color: #222;
+  --border-color: #444;
 }
 body {
   margin: 0;
@@ -19,6 +20,9 @@ body {
 }
 .top-container {
   height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--primary-color);
 }
 header {
@@ -53,9 +57,6 @@ header {
 .rules ul {
   line-height: 2em;
 }
-.arrow {
-
-}
 .arrow-body {
   margin: 0 auto;
   padding: 0;
@@ -79,6 +80,7 @@ header {
 }
 
 section.game {
+  padding: 25px;
   overflow: auto;
   background-color: var(--secondary-color);
 }
@@ -89,7 +91,7 @@ section.game {
   width: 50%;
   max-width: 450px;
   height: 300px;
-  border: 7px solid var(--secondary-font-color);
+  border: 7px solid var(--border-color);
   border-radius: 10px;
   background-color: #eee;
 }
@@ -108,17 +110,21 @@ section.game {
 .selection {
   margin: 5px;
   outline: none;
-  border: 2px solid #333;
+  border: 8px solid var(--border-color);
 }
 
 .selection i {
   text-align: center;
   font-size: var(--icon-size);
 }
-button.selection i {
-  transition: 0.12s;
+
+button.selection:hover, button.selection:focus {
+  box-shadow: 0px 0px 20px black;
 }
-button.selection i:hover {
+button.selection:hover {
+  color: var(--primary-color);
+}
+button.selection:active {
   color: var(--primary-color);
 }
 .user-selection p {
@@ -131,9 +137,9 @@ button.selection {
   height: var(--selection-dimensions);
   background-color: #eee;
   cursor: pointer;
-  border-width: 4px;
   border-radius: 25%;
-  transition: 0.07s;
+  transition: 0.1s all;
+  color: var(--border-color);
 }
 .computer-selection {
   width: var(--selection-dimensions);
@@ -153,12 +159,50 @@ button.selection:active:focus {
   background-color: black;
   color: var(--primary-color);
 }
-button.selection:focus {
-  box-shadow: 0px 0px 10px black;
-}
-.selection i.icon-highlight {
-  color: var(--primary-color);
+
+button.reset {
+  width: 100px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 10px;
+  background-color: white;
+
 }
 svg {
   height: 75%;
+}
+#computer-move {
+  text-transform: uppercase;
+  margin-top: 0;
+}
+h3.user-move {
+  text-transform: uppercase;
+  text-align: center;
+}
+footer {
+  background-color: #333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+footer > a {
+  margin: 15px;
+  color: #eee;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+footer > a:hover {
+  color: var(--primary-color);
+}
+section.rules {
+  padding: 25px;
+  background-color: #eee;
+}
+section.rules li {
+  list-style: square;
+}
+div#placeholder {
+  height: 25px;
 }

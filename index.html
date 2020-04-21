@@ -119,18 +119,29 @@
   <section class="game">
     <div class="scoreboard">
       <h2>Scoreboard</h2>
-      <p class="score"></p>
+      <div class="scores">
+        <div id="user" class="score-container">
+          <h3 class="score-title" id="user-title">You</h3>
+        </div>
+        <div id="computer" class="score-container">
+          <h3 class="score-title" id="user-title">Computer</h3>
+        </div>
+      </div>
       <p class="game">The winner is...</p>
       <p class="round">Make a move!</p>
+      <button class="reset">Reset</button>
     </div>
     <div class="selections">
+      <h3 class="move-caption">Computer's move</h3>
       <div class="computer-selection selection">
       </div>
-
+      <!--
       <div class="arrow">
         <div class="arrow-body"></div>
         <div class="arrow-down"></div>
-      </div>
+      </div>  
+      -->
+      <div id="placeholder"></div>
       
       <div class="user-selection">
 
@@ -143,12 +154,13 @@
         <button class="selection scissors">
           <i class="far fa-hand-scissors"></i>
         </button>
-        <p>Choose your move</p>
+        
       </div>
+      <h3 class="move-caption">Your move</p>
     </div>
 
   </section>
-  <div class="rules">
+  <section class="rules">
     <h2>Rules</h2>
     <ul>
       <li>Every time you lose a game, you take a shot.</li>
@@ -156,8 +168,8 @@
       <li>If you win three games in a row, everyone needs to take a shot.</li>
       <li>If you lose three games in a row, you have to finish a bottle all by yourself.</li>
     </ul>
-  </div>
-  <button class="reset">Reset</button>
+  </section>
+  
   <footer>
     <a href="https://www.vecteezy.com/free-vector/beer">Beer Vectors by Vecteezy</a>
   </footer>

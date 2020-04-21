@@ -3,7 +3,8 @@ const buttons = document.querySelectorAll('button.selection');
 const reset = document.querySelector('button.reset');
 const roundResults = document.querySelector('div.scoreboard > p.round');
 const gameResult = document.querySelector('div.scoreboard > p.game');
-const score = document.querySelector('div.scoreboard > p.score');
+const userScoreContainer = document.querySelector('div.scores > #user');
+const computerScoreContainer = document.querySelector('div.scores > #computer')
 const computerMove = document.createElement('i');
 const brainClassList = 'fas fa-brain';
 const rockClassList = 'far fa-hand-rock';
@@ -20,6 +21,7 @@ computer.appendChild(computerMove);
 buttons.forEach(button => {
   console.log(button);
   button.addEventListener('click', playRound);
+  
 });
 
 reset.addEventListener('click', () => {
@@ -29,15 +31,24 @@ reset.addEventListener('click', () => {
   showScore();
   roundResults.textContent = `Make a move!`;
   gameResult.textContent = 'The winner is...';
+  computerMove.classList = brainClassList;
 });
 
+const playerScoreP = document.createElement('p');
+const computerScoreP = document.createElement('p');
+playerScoreP.classList.add('individual-score');
+computerScoreP.classList.add('individual-score');
+
 function showScore() {
-  score.textContent = `You: ${playerScore} / Computer: ${computerScore}`;
+  playerScoreP.textContent = `${playerScore}`;
+  computerScoreP.textContent = `${computerScore}`;
   console.log(`Player Score: ${playerScore}`);
   console.log(`Computer Score: ${computerScore}`);
 }
 
 showScore();
+userScoreContainer.appendChild(playerScoreP);
+computerScoreContainer.appendChild(computerScoreP);
 
 function updateScore(roundResult) {
   if (!roundResult.indexOf('You win!')) {

@@ -1,4 +1,4 @@
-html {
+:root {
   --primary-color: #015C7F/*#1d7777*/;
   --primary-color: #019AD4;
   --secondary-color: #fdbb41/*#FFB600#ebe39d*/;
@@ -19,7 +19,7 @@ body {
   color: var(--secondary-font-color);
 }
 .top-container {
-  height: 80vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,25 +80,36 @@ header {
 }
 
 section.game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   padding: 25px;
   overflow: auto;
   background-color: var(--secondary-color);
 }
 
 .scoreboard {
-  margin: 25px auto 25px auto;
   padding: 20px;
   width: 50%;
   max-width: 450px;
-  height: 300px;
   border: 7px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #eee;
 }
 .scoreboard > h2 {
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+}
+.scoreboard > .scores {
+  display: flex;
+  justify-content: space-around;
+}
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .selections {
   display: flex;
@@ -111,6 +122,7 @@ section.game {
   margin: 5px;
   outline: none;
   border: 8px solid var(--border-color);
+  color: var(--border-color);
 }
 
 .selection i {
@@ -154,7 +166,8 @@ button.selection {
   align-items: center;
   background-color: #eee;
 }
-button.selection:active:focus {
+
+button.selection:active:focus, button.selection:active {
   transform: scale(1.1);
   background-color: black;
   color: var(--primary-color);
@@ -167,18 +180,13 @@ button.reset {
   font-size: inherit;
   border-radius: 10px;
   background-color: white;
-
+  transition: 0.07s;
+}
+button.reset:active {
+  border-width: 3px;
 }
 svg {
   height: 75%;
-}
-#computer-move {
-  text-transform: uppercase;
-  margin-top: 0;
-}
-h3.user-move {
-  text-transform: uppercase;
-  text-align: center;
 }
 footer {
   background-color: #333;
@@ -205,4 +213,24 @@ section.rules li {
 }
 div#placeholder {
   height: 25px;
+}
+
+@media (max-width: 550px) {
+  :root {
+    --selection-dimensions: 125px;
+  }
+}
+@media (max-width: 475px) {
+  :root {
+    --selection-dimensions: 100px;
+  }
+  .selection {
+    margin: 0;
+    border-width: 5px;
+  }
+}
+@media (max-width: 390px) {
+  :root {
+    --selection-dimensions: 85px;
+  }
 }

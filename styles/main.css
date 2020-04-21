@@ -294,25 +294,34 @@ button.reset {
 button.reset:active {
   border-width: 3px;
 }
-
 svg {
   height: 75%;
 }
 footer {
-  background-color: #333;
+  background-color: var(--secondary-color);
+}
+#overlay {
+  background-color: rgba(0,0,0,0.2);
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
-footer > a {
-  margin: 15px;
+footer  p, footer a {
+  margin: 20px 15px;
   color: #eee;
   text-decoration: none;
   font-family: inherit;
   font-size: inherit;
 }
-footer > a:hover {
-  color: var(--primary-color);
+footer a {
+  margin: 0;
+  transition: 0.1s;
+}
+footer a:hover {
+  color: var(--secondary-font-color);
+}
+footer i {
+  font-size: inherit;
 }
 div.rules li {
   list-style: square;
@@ -344,7 +353,7 @@ div#placeholder {
     width: 100%;
     min-height: 300px;
     border-radius: 0px;
-    border: 5px double black;
+    border: 10px double black;
   }
 }
 @media (max-width: 475px) {
@@ -367,14 +376,3 @@ div#placeholder {
     padding-bottom: 5px;
     font-size: 12px;
   }
-/*
-  .scoreboard > h2 {
-    font-size: 1em;
-  }
-  .scoreboard h3 {
-    font-size: 0.8em;
-  }
-  .scoreboard {
-    font-size: 0.7em;
-  }/*
-}

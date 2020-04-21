@@ -11,6 +11,7 @@
   --secondary-font-color: #222;
   --border-color: #444;
 }
+
 body {
   margin: 0;
   background-color: white;
@@ -18,6 +19,7 @@ body {
   font-size: 18px;
   color: var(--secondary-font-color);
 }
+
 .top-container {
   height: 100vh;
   display: flex;
@@ -25,6 +27,7 @@ body {
   align-items: center;
   background-color: var(--primary-color);
 }
+
 header {
   padding: 25px;
   display: flex;
@@ -34,18 +37,22 @@ header {
   text-transform: uppercase;
 
 }
+
 .titles {
   margin-top: 10px;
 }
+
 .titles > h1 {
   margin: 0;
   text-align: center;
 }
+
 .titles > p {
   margin: 0;
   text-align: left;
   font-style: italic;
 }
+
 .beer {
   height: 100px;
   transform: rotate(-15deg);
@@ -54,9 +61,11 @@ header {
 .rules > h2 {
   text-align: center;
 }
+
 .rules ul {
   line-height: 2em;
 }
+
 .arrow-body {
   margin: 0 auto;
   padding: 0;
@@ -64,6 +73,7 @@ header {
   height: 100px;
   background-color: var(--secondary-font-color);
 }
+
 .arrow-up {
   width: 0;
   height: 0;
@@ -71,6 +81,7 @@ header {
   border-left: var(--arrow-tip-width) solid transparent;
   border-right: var(--arrow-tip-width) solid transparent;
 }
+
 .arrow-down {
   width: 0;
   height: 0;
@@ -97,26 +108,31 @@ section.game {
   border-radius: 5px;
   background-color: #eee;
 }
+
 .scoreboard > h2 {
   padding: 10px 0;
   margin: 0;
   text-align: center;
   text-transform: uppercase;
 }
+
 .scoreboard > .scores {
   padding: 5px;
   display: flex;
   justify-content: space-around;
   border: 3px dotted var(--border-color);
 }
+
 .score-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .round {
   font-weight: bold;
 }
+
 .win-lose {
   text-transform: uppercase;
   text-align: center;
@@ -127,17 +143,19 @@ section.game {
   animation-iteration-count: infinite;
   animation-fill-mode: both;
 }
+
 @keyframes drunk {
-0% {
-  transform: rotate(-5deg);
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
 }
-50% {
-  transform: rotate(5deg);
-}
-100% {
-  transform: rotate(-5deg);
-}
-}
+
 .selections {
   display: flex;
   flex-direction: column;
@@ -154,20 +172,27 @@ section.game {
   color: var(--border-color);
 }
 
+.user-selection {
+  display: flex;
+  justify-content: center;
+}
+
 .selection i {
-  /*text-align: center;*/
   font-size: var(--icon-size);
 }
 
 button.selection:hover, button.selection:focus {
   box-shadow: 0px 0px 20px black;
 }
+
 button.selection:hover {
   color: var(--primary-color);
 }
+
 button.selection:active {
   color: var(--primary-color);
 }
+
 .user-selection p {
   text-align: center;
   color: var(--secondary-font-color);
@@ -182,6 +207,7 @@ button.selection {
   transition: 0.1s all;
   color: var(--border-color);
 }
+
 .computer-selection {
   width: var(--selection-dimensions);
   height: var(--selection-dimensions);
@@ -214,6 +240,7 @@ button.reset {
 button.reset:active {
   border-width: 3px;
 }
+
 svg {
   height: 75%;
 }

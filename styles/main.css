@@ -146,6 +146,8 @@ section.game {
 }
 
 .selection {
+  display: flex;
+  justify-content: center;
   margin: 5px;
   outline: none;
   border: 8px solid var(--border-color);
@@ -153,7 +155,7 @@ section.game {
 }
 
 .selection i {
-  text-align: center;
+  /*text-align: center;*/
   font-size: var(--icon-size);
 }
 
@@ -255,7 +257,6 @@ div#placeholder {
     --selection-dimensions: 100px;
   }
   .selection {
-    margin: 0;
     border-width: 5px;
   }
 }

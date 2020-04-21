@@ -169,7 +169,7 @@ section.game {
   align-items: center;
   margin: 5px;
   outline: none;
-  border: 8px solid var(--border-color);
+  border: 5px solid var(--border-color);
   color: var(--border-color);
 }
 

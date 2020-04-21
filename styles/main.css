@@ -86,7 +86,7 @@ section.game {
   align-items: center;
   padding: 50px 25px;
   overflow: auto;
-  /*background-color: var(--secondary-color);*/
+  background-color: var(--secondary-color);
 }
 
 .scoreboard {

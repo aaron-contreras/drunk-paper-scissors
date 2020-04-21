@@ -84,9 +84,9 @@ section.game {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 25px;
+  padding: 50px 25px;
   overflow: auto;
-  background-color: var(--secondary-color);
+  /*background-color: var(--secondary-color);*/
 }
 
 .scoreboard {
@@ -98,20 +98,45 @@ section.game {
   background-color: #eee;
 }
 .scoreboard > h2 {
-  padding: 10px;
+  padding: 10px 0;
   margin: 0;
   text-align: center;
   text-transform: uppercase;
-  border-bottom: 2px dotted black;
 }
 .scoreboard > .scores {
+  padding: 5px;
   display: flex;
   justify-content: space-around;
+  border: 3px dotted var(--border-color);
 }
 .score-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.round {
+  font-weight: bold;
+}
+.win-lose {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  animation-name: drunk;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+@keyframes drunk {
+0% {
+  transform: rotate(-5deg);
+}
+50% {
+  transform: rotate(5deg);
+}
+100% {
+  transform: rotate(-5deg);
+}
 }
 .selections {
   display: flex;
@@ -217,9 +242,12 @@ div#placeholder {
   height: 25px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 560px) {
   :root {
     --selection-dimensions: 125px;
+  }
+  .scoreboard {
+    width: 75%;
   }
 }
 @media (max-width: 475px) {
@@ -234,5 +262,12 @@ div#placeholder {
 @media (max-width: 390px) {
   :root {
     --selection-dimensions: 85px;
+    
+  }
+  .scoreboard > h2 {
+    font-size: 1em;
+  }
+  .scoreboard h3 {
+    font-size: 0.8em;
   }
 }

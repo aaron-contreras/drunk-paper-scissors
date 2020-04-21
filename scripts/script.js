@@ -21,7 +21,6 @@ computer.appendChild(computerMove);
 buttons.forEach(button => {
   console.log(button);
   button.addEventListener('click', playRound);
-  
 });
 
 reset.addEventListener('click', () => {
@@ -31,7 +30,12 @@ reset.addEventListener('click', () => {
   showScore();
   roundResults.textContent = `Make a move!`;
   gameResult.textContent = 'The winner is...';
+  gameResult.classList.remove('win-lose');
   computerMove.classList = brainClassList;
+  buttons.forEach(button => {
+    button.removeAttribute('disabled');
+    button.style.backgroundColor = '';
+  });
 });
 
 const playerScoreP = document.createElement('p');
@@ -60,13 +64,21 @@ function updateScore(roundResult) {
 }
 
 function showGameResult() {
-  const result = playerScore > computerScore ? 'You win!' : 'You lose!';
+  const result = playerScore > computerScore ? 'You win, Drink up!' : 'You lose, Drink some more!';
+  gameResult.classList.toggle('win-lose');
   gameResult.textContent = result;
-  console.log(result);
 }
-
+function disablePlayingButtons() {
+  buttons.forEach(button => {
+    button.style.backgroundColor = 'black';
+    button.setAttribute('disabled', 'true');
+  });
+}
 function checkWin() {
-  if (playerScore === 5 || computerScore === 5) showGameResult();
+  if (playerScore === 5 || computerScore === 5) {
+    showGameResult();
+    disablePlayingButtons();
+  }
 }
 
 function showRoundResult(roundResult, playerSelection, computerSelection) {
@@ -74,7 +86,6 @@ function showRoundResult(roundResult, playerSelection, computerSelection) {
   const currentRoundResult = document.createElement('p');
   currentRoundResult.textContent = `Your selection: ${playerSelection}. Computer's selection: ${computerSelection}. Round result: ${roundResult}`;
   roundResults.appendChild(currentRoundResult);
-
 }
 
 function computerPlay() {

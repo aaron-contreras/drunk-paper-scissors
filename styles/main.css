@@ -30,6 +30,9 @@ body {
   height: 100vh;
   background-color: var(--primary-color);
 }
+.top-container p strong{
+  font-size: 1.5em;
+}
 header {
   display: flex;
   flex-wrap: wrap;
@@ -90,51 +93,6 @@ div.header {
 .rules ul {
   line-height: 2em;
 }
-#play-below {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#play-below > p {
-  font-weight: bold;
-}
-.arrow {
-  font-size: 2.75em;
-  animation-name: bounce;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes bounce {
-  20% {
-    transform: translateY(10px);
-  }
-}
-.arrow-body {
-  margin: 0 auto;
-  padding: 0;
-  width: var(--arrow-body-width);
-  height: 75px;
-  background-color: var(--secondary-color);
-}
-
-.arrow-up {
-  width: 0;
-  height: 0;
-  border-bottom: var(--arrow-tip-width) solid var(--secondary-color);
-  border-left: var(--arrow-tip-width) solid transparent;
-  border-right: var(--arrow-tip-width) solid transparent;
-}
-
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-top: var(--arrow-tip-width) solid var(--secondary-color);
-  border-left: var(--arrow-tip-sides) solid transparent;
-  border-right: var(--arrow-tip-sides) solid transparent;
-}
-
 
 section.game {
   height: 100vh;

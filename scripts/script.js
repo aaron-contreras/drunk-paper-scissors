@@ -19,7 +19,6 @@ computerMove.className = brainClassList;
 computer.appendChild(computerMove);
 
 buttons.forEach(button => {
-  console.log(button);
   button.addEventListener('click', playRound);
 });
 
@@ -46,8 +45,6 @@ computerScoreP.classList.add('individual-score');
 function showScore() {
   playerScoreP.textContent = `${playerScore}`;
   computerScoreP.textContent = `${computerScore}`;
-  console.log(`Player Score: ${playerScore}`);
-  console.log(`Computer Score: ${computerScore}`);
 }
 
 showScore();
@@ -107,28 +104,20 @@ function updateComputerMove() {
 }
 
 function checkRoundResult(playerSelection, computerSelection) {
-  /* Paper beats rock
-  Rock beats scissors
-  Scissors beats paper
-  */
-  if (playerSelection === 'rock' && computerSelection === 'scissors'
-    || playerSelection === 'scissors' && computerSelection === 'rock') {
-    return playerSelection === 'rock' ?
-      'You win! Rock beats Scissors.' :
-      'You lose! Rock beats Scissors.';
-  } else if (playerSelection === 'paper' && computerSelection === 'rock'
-    || playerSelection === 'rock' && computerSelection === 'paper') {
-    return playerSelection === 'paper' ?
-      'You win! Paper beats Rock.' :
-      'You lose! Paper beats Rock.';
-  } else if (playerSelection === 'scissors' && computerSelection === 'paper'
-    || playerSelection === 'paper' && computerSelection === 'scissors') {
-    return playerSelection === 'scissors' ?
-      'You win! Scissors beats Paper.' :
-      'You lose! Scissors beats Paper.';
-  } else {
+  const wins = {
+    paper: "rock",
+    rock: "scissors",
+    scissors: "paper"
+  };
+
+  if (playerSelection === computerSelection) {
     return 'Tie!';
   }
+  if (wins[playerSelection] === computerSelection) {
+    return `You win! ${playerSelection} beats ${computerSelection}`;
+  }
+
+  return `You lose! ${computerSelection} beats ${playerSelection}`;
 }
 
 function updateRoundNumber() {
@@ -139,19 +128,9 @@ function updateRoundNumber() {
 function playRound(buttonClicked) {
   updateRoundNumber();
   const computerSelection = updateComputerMove();
-
-  console.log(buttonClicked.currentTarget.classList[1]);
   const playerSelection = buttonClicked.currentTarget.classList[1];
   const roundResult = checkRoundResult(playerSelection, computerSelection);
   updateScore(roundResult);
   showRoundResult(roundResult, playerSelection, computerSelection);
   checkWin();
 }
-
-/* Helper functions and extras
-
-function showMoves(playerSelection, computerSelection) {
-  console.log(`Player's move: ${playerSelection}`);
-  console.log(`Computer's move: ${computerSelection}`);
-}
-*/
